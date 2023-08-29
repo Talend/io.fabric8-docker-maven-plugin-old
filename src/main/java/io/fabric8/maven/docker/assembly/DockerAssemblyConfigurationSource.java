@@ -93,7 +93,6 @@ public class DockerAssemblyConfigurationSource implements AssemblerConfiguration
         return ".";
     }
 
-    @Override
     public ArtifactRepository getLocalRepository() {
         return params.getSession().getLocalRepository();
     }
@@ -333,4 +332,30 @@ public class DockerAssemblyConfigurationSource implements AssemblerConfiguration
                                                                                    CommandLineUtils.getSystemEnvVars(false), true );
         return FixedStringSearchInterpolator.create( envProps );
     }
+
+	@Override
+	public Properties getAdditionalProperties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer getOverrideUid() {
+		return null;
+	}
+
+	@Override
+	public String getOverrideUserName() {
+		return null;
+	}
+
+	@Override
+	public Integer getOverrideGid() {
+		return null;
+	}
+
+	@Override
+	public String getOverrideGroupName() {
+		return null;
+	}
 }

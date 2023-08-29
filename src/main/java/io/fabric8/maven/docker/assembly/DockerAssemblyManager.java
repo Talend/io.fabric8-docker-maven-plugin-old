@@ -253,7 +253,7 @@ public class DockerAssemblyManager {
             MappingTrackArchiver ta = (MappingTrackArchiver) trackArchiver;
             ta.init(log, assemblyName);
             assembly.setId("tracker");
-            assemblyArchiver.createArchive(assembly, assemblyName, "track", source, false, null);
+            assemblyArchiver.createArchive(assembly, assemblyName, "track", source, false, null, null);
             return ta.getAssemblyFiles(mojoParams.getSession());
         }
     }
@@ -463,7 +463,7 @@ public class DockerAssemblyManager {
         try {
             originalArtifactFile = ensureThatArtifactFileIsSet(params.getProject());
             assembly.setId("docker");
-            assemblyArchiver.createArchive(assembly, assemblyConfig.getName(), buildMode.getExtension(), source, false, null);
+            assemblyArchiver.createArchive(assembly, assemblyConfig.getName(), buildMode.getExtension(), source, false, null, null);
         } catch (ArchiveCreationException | AssemblyFormattingException e) {
             String error = "Failed to create assembly for docker image " +
                            " (with mode '" + buildMode + "'): " + e.getMessage() + ".";
